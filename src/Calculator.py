@@ -40,3 +40,7 @@ class Calculator:
     def subtract(self, a, b):
         self.result = subtract(a, b)
         return self.result
+
+    def multiply(self, a, b):
+        self.result = multiply(a, b)
+        return self.result
