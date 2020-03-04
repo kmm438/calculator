@@ -24,6 +24,14 @@ class MyTestCase(unittest.TestCase):
             self.assertEqual(self.calculator.add(int(theRow['Value 1']), int(theRow['Value 2'])), int(theRow['Result']))
             print("Unit test:", int(theRow['Value 1']), " + ", int(theRow['Value 2']), " = ", self.calculator.result)
 
+    def test_subtraction(self):
+        self.csv_reader = CsvReader('/src/Unit Test Subtraction.csv').data
+        print("--------------TEST SUBTRACTION:")
+        for theRow in self.csv_reader:
+            #check to see if the difference of the first two colums equals the third
+            self.assertEqual(self.calculator.subtract(int(theRow['Value 1']), int(theRow['Value 2'])), int(theRow['Result']))
+            print("Unit test:", int(theRow['Value 2']), " - ", int(theRow['Value 1']), " = ", self.calculator.result)
+
     # def test_results_property_calculator(self):
     #     self.assertEqual(self.calculator.result, 4)
     #
