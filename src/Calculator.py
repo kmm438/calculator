@@ -52,3 +52,7 @@ class Calculator:
     def square(self, a):
         self.result = square(a)
         return self.result
+
+    def sqrt(self, a):
+        self.result = sqrt(a)
+        return self.result

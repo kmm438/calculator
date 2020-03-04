@@ -61,6 +61,18 @@ class MyTestCase(unittest.TestCase):
             print("Unit test:", float(theRow['Value 1']), " to the second power  = ",
                   self.calculator.result)
 
+    def test_sqrt(self):
+        self.csv_reader = CsvReader('/src/Unit Test Square Root.csv').data
+        print("--------------TEST SQUARE ROOT:")
+        for theRow in self.csv_reader:
+            # check to see if the sqrt of the first column equals the 2nd
+
+            value1 = self.calculator.sqrt(float((theRow['Value 1'])))
+            value2 = float(theRow['Result'])
+            self.assertEqual(round(value1,8), round(value2,8))
+            print("Unit test:", float(theRow['Value 1']), "'s sqrt is = ",
+                  self.calculator.result)
+
     # def test_results_property_calculator(self):
     #     self.assertEqual(self.calculator.result, 4)
     #
