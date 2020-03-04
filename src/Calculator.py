@@ -48,3 +48,7 @@ class Calculator:
     def divide(self, a, b):
         self.result = divide(a, b)
         return self.result
+
+    def square(self, a):
+        self.result = square(a)
+        return self.result
