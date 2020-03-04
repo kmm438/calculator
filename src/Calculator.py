@@ -14,7 +14,7 @@ def multiply(a, b):
 
 
 def divide(a, b):
-    return a / b
+    return round((b / a), 9)
 
 
 def square(a):
@@ -43,4 +43,8 @@ class Calculator:
 
     def multiply(self, a, b):
         self.result = multiply(a, b)
+        return self.result
+
+    def divide(self, a, b):
+        self.result = divide(a, b)
         return self.result

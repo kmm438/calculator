@@ -40,6 +40,15 @@ class MyTestCase(unittest.TestCase):
             self.assertEqual(self.calculator.multiply(int(theRow['Value 1']), int(theRow['Value 2'])), int(theRow['Result']))
             print("Unit test:", int(theRow['Value 2']), " * ", int(theRow['Value 1']), " = ", self.calculator.result)
 
+
+    def test_division(self):
+        self.csv_reader = CsvReader('/src/Unit Test Division.csv').data
+        print("--------------TEST DIVISION:")
+        for theRow in self.csv_reader:
+            #check to see if the result of the first two colums equals the third
+            self.assertEqual(self.calculator.divide(float(theRow['Value 1']), float(theRow['Value 2'])), float(theRow['Result']))
+            print("Unit test:", float(theRow['Value 2']), " * ", float(theRow['Value 1']), " = ", self.calculator.result)
+
     # def test_results_property_calculator(self):
     #     self.assertEqual(self.calculator.result, 4)
     #
